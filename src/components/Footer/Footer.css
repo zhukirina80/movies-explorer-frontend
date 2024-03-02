@@ -1,0 +1,145 @@
+.footer {
+  width: 100%;
+  background-color: #202020;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer__content {
+  max-width: 1140px;
+  width: 100%;
+  padding: 79px 0px 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 1023px) {
+  .footer__content {
+    max-width: 708px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__content {
+    max-width: 300px;
+  }
+}
+
+.footer__title {
+  width: 320px;
+  margin: 0 auto 20px;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: center;
+  color: #8b8b8b;
+}
+
+@media (max-width: 767px) {
+  .footer__title {
+    width: 300px;
+    font-size: 12px;
+  }
+}
+
+.footer__column {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0;
+  background-color: transparent;
+  border-top: 1px solid  #424242;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 1023px) {
+  .footer__column {
+    max-width: 708px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__column {
+    max-width: 300px;
+    margin: 0 auto;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+.footer__year {
+  width: 48px;
+  margin: 20px 0 0 0;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .footer__year {
+    text-align: center;
+    margin: 30px auto 0;
+    font-size: 12px;
+  }
+}
+
+.footer__links {
+  margin: 20px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+@media (max-width: 767px) {
+  .footer__links {
+    margin: 20px auto 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+}
+
+.footer__link {
+  margin: 0 0 0 20px;
+  padding: 0;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: right;
+  color: #fff;
+  transition: opacity .3s ease .1s;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .footer__link {
+    margin: 0 auto;
+    padding: 12px 0 0 0;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+.footer__link:hover {
+  opacity: .8;
+}

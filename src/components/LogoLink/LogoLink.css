@@ -1,0 +1,14 @@
+.logoLink {
+  width: 38px;
+  height: 38px;
+  background-image: url(../../images/logo-header.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity .3s ease .1s;
+}
+  
+  .logoLink:hover {
+    opacity: .7;
+  }

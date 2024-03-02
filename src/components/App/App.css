@@ -1,0 +1,10 @@
+.app {
+  font-family: 'Inter', arial, sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
