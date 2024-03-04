@@ -5,7 +5,7 @@ import SavedMoviesCard from '../SavedMoviesCard/SavedMoviesCard';
 function SavedMoviesCardList() {
 
 
-  const savedCardsArray = Array.from({ length: 2 }, (_, index) => <SavedMoviesCard key={index} />);
+  const savedCardsArray = Array.from({ length: 3 }, (_, index) => <SavedMoviesCard key={index} />);
 
   return (
     <section className="savedMoviesCardList">

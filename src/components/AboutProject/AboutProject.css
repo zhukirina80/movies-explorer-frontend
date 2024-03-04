@@ -132,7 +132,7 @@
 
 .aboutProject__diagram-column {
   height: 36px;
-  margin: 0px;
+  margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -159,6 +159,7 @@
 }
 
 .aboutProject__diagram-column_stage {
+  margin-top: 5px;
   background-color: transparent;
   color: #8b8b8b;
 }

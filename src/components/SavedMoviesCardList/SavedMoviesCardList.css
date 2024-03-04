@@ -29,7 +29,7 @@
   .savedMoviesCardList__cards {
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
     gap: 35px 24px;
   }
 }
@@ -37,7 +37,7 @@
 @media (max-width: 767px) {
   .savedMoviesCardList__cards {
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
     gap: 16px;
   }
 }

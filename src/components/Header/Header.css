@@ -3,17 +3,16 @@
   height: 74px;
   background-color: #202020;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 
+.header__movies {
+  background-color: #202020;
+}
+
 .header__landing {
-  width: 100%;
-  height: 74px;
   background-color: #073042;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
 }
 
 .header__container {
@@ -25,6 +24,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 1180px) {
+  .header__container {
+    max-width: 900px;
+  }
 }
 
 @media (max-width: 1023px) {

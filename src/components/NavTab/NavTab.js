@@ -8,9 +8,9 @@ function NavTab({ onClose }) {
   return (
     <nav className="navTab">
       <button onMouseDown={onClose} type="reset" className="navTab__button-close" aria-label="Закрыть" />
-      <NavLink to={`/`} className="navTab__link" activeClassName="active">Главная</NavLink>
-      <NavLink to={`/movies`} className="navTab__link" activeClassName="active">Фильмы</NavLink>
-      <NavLink to={`/saved-movies`} className="navTab__link" activeClassName="active">Сохранённые фильмы</NavLink>
+      <NavLink to={`/`} className={({ isActive }) => isActive ? "navTab__link-active" : "navTab__link"}>Главная</NavLink>
+      <NavLink to={`/movies`} className={({ isActive }) => isActive ? "navTab__link-active" : "navTab__link"} >Фильмы</NavLink>
+      <NavLink to={`/saved-movies`} className={({ isActive }) => isActive ? "navTab__link-active" : "navTab__link"}>Сохранённые фильмы</NavLink>
       <Link to={`/profile`} className="navTab__link-profile"><p className="navTab__link-text">Аккаунт</p><div className="navTab__link-icon"/></Link>
     </nav>
   )

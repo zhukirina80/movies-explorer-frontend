@@ -9,7 +9,7 @@
 .aboutMe__content {
   max-width: 1140px;
   width: 100%;
-  padding: 100px 0 0 0;
+  padding: 105px 0 0 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -151,7 +151,8 @@
 }
 
 .aboutMe__foto {
-  width: 270px;
+  max-width: 270px;
+  width: 100%;
   height: 327px;
   border-radius: 10px;
   background-image: url(../../images/foto_student.jpg);
@@ -161,14 +162,14 @@
 
 @media (max-width: 1023px) {
   .aboutMe__foto {
-    width: 255px;
+    max-width: 255px;
     height: 307px;
   }
 }
 
 @media (max-width: 767px) {
   .aboutMe__foto {
-    width: 292px;
+    max-width: 292px;
     height: 352px;
   }
 }

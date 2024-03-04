@@ -37,7 +37,7 @@ function App() {
       <Routes>
         <Route path='/' element={
           <>
-            <Header headerName="landing" navigationName ="authorized"/>
+            <Header headerName="landing" navigationName ="unauthorized"/>
             <Main/>
             <Footer/>
           </>
