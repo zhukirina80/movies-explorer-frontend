@@ -11,3 +11,7 @@ https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/Дипломный-проек�
 IP 158.160.124.39
 
 Frontend https://zhukirina.nomoredomainswork.ru
+
+## Ссылки на пул реквест
+
+https://github.com/zhukirina80/movies-explorer-frontend/pull/2
