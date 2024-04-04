@@ -1,45 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
-import {useForm} from "react-hook-form"
 import BlockWithForm from '../BlockWithForm/BlockWithForm';
+import useFormWithValidation from '../../hooks/useFormWithValidation';
 
 function Login({ onLogin }) {
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation({ email: '', password: '' });
 
-  const { reset, handleSubmit, register, formState: {errors, isValid}, trigger } = useForm({
-    mode: 'all',
-  });
+  const navigate = useNavigate();
+  const [message, setMessage] = useState('');
 
-  const onSubmit = (data) => {
-   onLogin(data);
-   reset();
-  };
-
-  const emailClass = errors.email ? 'invalid' : '';
-  const passwordClass = errors.password ? 'invalid' : '';
+  function handleSubmit(e) {
+    e.preventDefault();
+    onLogin({ email: values.email, password: values.password })
+    .then(() => {
+      navigate('/movies');
+      resetForm();
+    })
+    .catch((err) => {
+      console.error(`Ошибка при авторизации пользователя ${err}`);
+      if (err.includes('401')) {
+        setMessage('Вы ввели неправильный логин или пароль');
+      } else {
+        setMessage('При авторизации произошла ошибка');
+      }
+    })
+  }
 
   return (
-    <BlockWithForm 
+    <BlockWithForm
       nameForm="login"
-      onSubmit={handleSubmit(onSubmit)}
-      isFormValid={isValid}>
-        <label className="login__title-input">E-mail</label>
-        <input {...register("email", {
-            required: "Пожалуйста, введите Ваш Email!",
-            pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, 
-                message: "Пожалуйста, введите корректный Email!"
-            }
-          })} onChange={() => trigger("email")} placeholder="E-mail" type="email" id="email" className={`login__input ${emailClass}`}/>
-        <span className="login__error">{errors.email?.message}</span>
-        <label className="login__title-input">Пароль</label>
-        <input {...register("password", {
-            required: "Пожалуйста, введите Ваш пароль",
-            minLength: {
-              value: 6,
-              message: "Пароль должен содержать не менее 6 символов!"
-            }
-          })} onChange={() => trigger("password")} placeholder="Пароль" type="password" id="password" className={`login__input ${passwordClass}`}/>
-        <span className="login__error">{errors.password?.message}</span>
+      onSubmit={handleSubmit}
+      isFormValid={isValid}
+      message={message}
+    >
+      <label className="login__title-input">E-mail</label>
+      <input
+        name="email"
+        value={values.email || ''}
+        onChange={handleChange}
+        placeholder="E-mail"
+        type="email"
+        required
+        className={`login__input ${errors.email ? 'invalid' : ''}`}
+      />
+      <span className="login__error">{errors.email}</span>
+      <label className="login__title-input">Пароль</label>
+      <input
+        name="password"
+        value={values.password || ''}
+        onChange={handleChange}
+        placeholder="Пароль"
+        type="password"
+        required
+        className={`login__input ${errors.password ? 'invalid' : ''}`}
+      />
+      <span className="login__error">{errors.password}</span>
     </BlockWithForm>
   );
 }

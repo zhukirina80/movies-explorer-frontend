@@ -1,20 +1,29 @@
 import React from 'react';
 import './SavedMoviesCard.css';
+import { Link } from 'react-router-dom';
 
-function SavedMoviesCard() {
+function formatDuration(duration) {
+  const hours = Math.floor(duration / 60);
+  const minutes = duration % 60;
+  return `${hours}ч ${minutes}м`;
+}
+
+function SavedMoviesCard({ movie, onDelite }) {
 
   function handleClick() {
-   console.log(111)
+   onDelite(movie._id);
   }
   
   return (
     <>
       <li className="savedMoviesCard">
         <div className="savedMoviesCard__title-conteiner">
-          <h2 className="savedMoviesCard__title">В погоне за Бенкси</h2>
-          <p className="savedMoviesCard__duration">0ч 42м</p>    
-        </div>     
-        <div className="savedMoviesCard__image" style={{ backgroundImage: `url(https://pyxis.nymag.com/v1/imgs/c63/fd5/eedaba3c4b25c10ea62eea71ffb42ea334-02-rolling-stones-exile-on-main-street.jpg)` } }/>
+            <h2 className="savedMoviesCard__title">{movie.nameRU || movie.nameEN}</h2>
+            <p className="savedMoviesCard__duration">{formatDuration(movie.duration)}</p>    
+          </div> 
+          <Link to={movie.trailerLink} target='_blank'>
+            <img className="savedMoviesCard__image" src={movie.image} alt={movie.nameRU || movie.nameEN} />
+          </Link>
         <button type="button" onClick={handleClick} className="savedMoviesCard__button" aria-label="Удалить"/>
       </li>
     </>

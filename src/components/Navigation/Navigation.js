@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavTab from '../NavTab/NavTab';
 
-function Navigation ({ navigationName, onNavTab }) {
+function Navigation ({ navigationName }) {
 
   const [isNavTabOpen, setIsNavTabOpen] = useState(false);
   const navigate = useNavigate();

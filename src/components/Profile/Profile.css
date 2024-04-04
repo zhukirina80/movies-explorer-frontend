@@ -188,6 +188,9 @@
 
 .profile__link-out {
   margin: 16px auto 70px;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
   cursor: pointer;
   transition: opacity .3s ease .1s;
   text-decoration: none;
@@ -215,7 +218,7 @@
   opacity: .8;
 }
 
-.profile__error-button {
+.profile__error-message {
   width: 410px;
   min-height: 14px;
   font-size: 11px;
@@ -229,13 +232,13 @@
 }
 
 @media (max-width: 1023px) {
-  .profile__error-button {
+  .profile__error-message {
     margin: 158px auto 0;
   }
 }
 
 @media (max-width: 767px) {
-  .profile__error-button {
+  .profile__error-message {
     width: 260px;
     margin: 327px auto 0;
   }
