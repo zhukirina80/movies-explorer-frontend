@@ -2,7 +2,7 @@ import LogoLink from '../LogoLink/LogoLink';
 import './BlockWithForm.css';
 import { Link } from "react-router-dom";
 
-function BlockWithForm({ onSubmit, children, nameForm, isFormValid }) {
+function BlockWithForm({ onSubmit, children, nameForm, isFormValid, message }) {
 
   return (
     <div className="blockWithForm">
@@ -11,7 +11,7 @@ function BlockWithForm({ onSubmit, children, nameForm, isFormValid }) {
         <h2 className="blockWithForm__title">{nameForm === 'register' ? 'Добро пожаловать!' : 'Рады видеть!'}</h2>
         <form noValidate onSubmit={onSubmit} className="blockWithForm__form">
           {children}
-          <span className={nameForm === 'register' ? 'blockWithForm__error' : 'blockWithForm__error-login'} >Что-то пошло не так</span>
+          <span className={nameForm === 'register' ? 'blockWithForm__error' : 'blockWithForm__error-login'}>{message}</span>
           <button type="submit" disabled={!isFormValid} className={`blockWithForm__button ${isFormValid ? '' : 'blockWithForm__button_disabled'}`}>
             {nameForm === 'register' ? 'Зарегистрироваться' : 'Войти'}
           </button>
