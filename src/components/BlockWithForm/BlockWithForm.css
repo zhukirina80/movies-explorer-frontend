@@ -19,7 +19,7 @@
 
 @media (max-width: 1023px) {
   .blockWithForm__conteiner {
-    margin: 232px auto; 
+    margin: 75px auto; 
   }
 }
 
@@ -55,7 +55,7 @@
 
 .blockWithForm__form {
   width: 396px;
-  height: 380px;
+  max-height: 380px;
   margin: 32px 0 0;
   padding: 0;
   display: flex;
@@ -67,7 +67,6 @@
 @media (max-width: 767px) {
   .blockWithForm__form {
     width: 260px;
-    height: 468px;
     margin: 72px 0 0;
   }
 }
@@ -87,7 +86,6 @@
 @media (max-width: 767px) {
   .blockWithForm__error {
     width: 260px;
-    margin: 190px auto 0;
   }
 }
 
@@ -98,7 +96,7 @@
   line-height: 12px;
   color: #ee3465;
   display: flex;
-  margin: 170px auto 0;
+  margin: 100px auto 0;
   box-sizing: border-box;
   justify-content: center;
 }
@@ -106,7 +104,6 @@
 @media (max-width: 767px) {
   .blockWithForm__error-login {
     width: 260px;
-    margin: 258px auto 0;
   }
 }
 

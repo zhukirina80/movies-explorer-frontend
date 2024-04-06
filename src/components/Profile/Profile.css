@@ -19,7 +19,7 @@
 
 @media (max-width: 1023px) {
   .profile__conteiner {
-    margin: 236px auto 0; 
+    margin: 80px auto 0; 
   }
 }
 
@@ -174,7 +174,7 @@
 
 @media (max-width: 1023px) {
   .profile__link {
-    margin: 192px auto 0;
+    margin: 100px auto 0;
   }
 }
 
@@ -182,7 +182,7 @@
   .profile__link {
     width: 260px;
     font-size: 12px;
-    margin: 361px auto 0;
+    margin: 120px auto 0;
   }
 }
 
